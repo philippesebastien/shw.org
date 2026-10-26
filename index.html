@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Société d'Histoire de Wendake / Wendake Historical Society</title>
+    <!-- Tailwind CSS pour un design propre et moderne -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fcfbf7;
+            color: #2d2621;
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Cinzel', serif;
+        }
+        .bg-wendake-red { background-color: #8B263E; }
+        .text-wendake-red { color: #8B263E; }
+        .border-wendake-red { border-color: #8B263E; }
+        .bg-wendake-gold { background-color: #D4AF37; }
+        .text-wendake-gold { color: #D4AF37; }
+        .bg-wendake-navy { background-color: #1A2B4C; }
+        .hero-overlay {
+            background: linear-gradient(rgba(26, 43, 76, 0.82), rgba(139, 38, 62, 0.82));
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b-2 border-wendake-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Name -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-wendake-red text-amber-100 flex items-center justify-center font-bold text-xl border-2 border-wendake-gold shadow-sm">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <div>
+                        <a href="#" class="text-xl font-bold text-wendake-navy tracking-wide block font-heading">
+                            SOCIÉTÉ D'HISTOIRE DE WENDAKE
+                        </a>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest block font-sans">
+                            iwontonk • societe-historique-wendake.org
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-6 text-sm font-semibold text-gray-700">
+                    <a href="#about" class="hover:text-wendake-red transition" data-fr="À Propos" data-en="About Us">À Propos</a>
+                    <a href="#conferences" class="hover:text-wendake-red transition" data-fr="Conférences" data-en="Conferences">Conférences</a>
+                    <a href="#charter" class="hover:text-wendake-red transition" data-fr="Charte & CA" data-en="Governance">Charte & CA</a>
+                    <a href="#resources" class="hover:text-wendake-red transition" data-fr="Recherche & Auteurs" data-en="Research & Authors">Recherche & Auteurs</a>
+                    <a href="#archives" class="hover:text-wendake-red transition" data-fr="Archives" data-en="Archives & Links">Archives</a>
+                </nav>
+
+                <!-- Language Switcher & Mobile Toggle -->
+                <div class="flex items-center space-x-4">
+                    <button id="lang-toggle" onclick="toggleLanguage()" class="px-3 py-1.5 rounded border border-wendake-gold text-wendake-navy hover:bg-wendake-gold hover:text-white transition font-bold text-xs tracking-wider uppercase flex items-center gap-1">
+                        <i class="fa-solid fa-globe"></i> <span id="lang-label">EN</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-wendake-navy text-white py-20 lg:py-28 hero-overlay">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <span class="inline-block px-4 py-1.5 bg-wendake-gold text-wendake-navy text-xs font-bold uppercase tracking-widest rounded-full mb-6">
+                Kwey Kwey • Bienvenue
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight font-heading" data-fr="Mémoire, Patrimoine et Histoire de la Nation Huron-Wendat" data-en="Memory, Heritage and History of the Huron-Wendat Nation">
+                Mémoire, Patrimoine et Histoire de la Nation Huron-Wendat
+            </h1>
+            <p class="text-lg md:text-xl text-amber-100 max-w-3xl mx-auto mb-8 font-light" data-fr="Organisme à but non lucratif dédié au regroupement des passionnés d'histoire, à la recherche, la conservation et la mise en valeur du patrimoine wendat." data-en="Non-profit organization dedicated to bringing together history enthusiasts, research, preservation, and promotion of Wendat heritage.">
+                Organisme à but non lucratif dédié au regroupement des passionnés d'histoire, à la recherche, la conservation et la mise en valeur du patrimoine wendat.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#conferences" class="px-6 py-3 bg-wendake-red hover:bg-red-800 text-white font-semibold rounded-lg shadow-md transition" data-fr="Prochaines Conférences" data-en="Upcoming Conferences">
+                    Prochaines Conférences
+                </a>
+                <a href="#charter" class="px-6 py-3 bg-transparent border-2 border-amber-200 hover:bg-white hover:text-wendake-navy text-white font-semibold rounded-lg transition" data-fr="Devenir Membre" data-en="Become a Member">
+                    Devenir Membre
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- À PROPOS & OBJECTIFS -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-wendake-navy font-heading" data-fr="La Société d'Histoire de Wendake" data-en="The Wendake Historical Society">La Société d'Histoire de Wendake</h2>
+                <p class="text-gray-600 mt-2" data-fr="Fondée le 29 juin 2023 à Wendake (Iwontonk)" data-en="Founded on June 29, 2023 in Wendake (Iwontonk)">Fondée le 29 juin 2023 à Wendake (Iwontonk)</p>
+                <div class="w-20 h-1 bg-wendake-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-stone-50 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-wendake-red text-3xl mb-4"><i class="fa-solid fa-landmark"></i></div>
+                    <h3 class="text-xl font-bold text-wendake-navy mb-2" data-fr="Conservation & Patrimoine" data-en="Preservation & Heritage">Conservation & Patrimoine</h3>
+                    <p class="text-sm text-gray-600" data-fr="Veiller à la conservation et à la mise en valeur du patrimoine wendat, notamment les sites, monuments, objets et documents à caractère historique." data-en="Ensure the preservation and enhancement of Wendat heritage, including sites, monuments, artifacts, and historical documents.">
+                        Veiller à la conservation et à la mise en valeur du patrimoine wendat, notamment les sites, monuments, objets et documents à caractère historique.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-stone-50 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-wendake-red text-3xl mb-4"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h3 class="text-xl font-bold text-wendake-navy mb-2" data-fr="Recherche & Publications" data-en="Research & Publications">Recherche & Publications</h3>
+                    <p class="text-sm text-gray-600" data-fr="Favoriser la réalisation d'études, la publication d'écrits et le maintien de fonds d'archives relatifs à l'histoire des Wendats et de Wendake." data-en="Promote research studies, publication of writings, and maintenance of archive collections related to the history of the Wendat and Wendake.">
+                        Favoriser la réalisation d'études, la publication d'écrits et le maintien de fonds d'archives relatifs à l'histoire des Wendats et de Wendake.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-stone-50 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-wendake-red text-3xl mb-4"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-xl font-bold text-wendake-navy mb-2" data-fr="Rassemblement & Diffusion" data-en="Gathering & Outreach">Rassemblement & Diffusion</h3>
+                    <p class="text-sm text-gray-600" data-fr="Regrouper les passionnés d'histoire, organiser des conférences mensuelles (chaque dernier jeudi du mois), formations et activités culturelles." data-en="Bring together history enthusiasts, organize monthly lectures (every last Thursday of the month), workshops, and cultural activities.">
+                        Regrouper les passionnés d'histoire, organiser des conférences mensuelles (chaque dernier jeudi du mois), formations et activités culturelles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONFÉRENCES & ACTIVITÉS -->
+    <section id="conferences" class="py-16 bg-stone-100 border-t border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-wendake-navy font-heading" data-fr="Conférences & Activités" data-en="Lectures & Activities">Conférences & Activités</h2>
+                    <p class="text-gray-600 mt-1" data-fr="Nos rencontres se tiennent habituellement les derniers jeudis de chaque mois." data-en="Our meetings are usually held on the last Thursday of each month.">
+                        Nos rencontres se tiennent habituellement les derniers jeudis de chaque mois.
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-wendake-gold text-wendake-navy">
+                        <i class="fa-solid fa-location-dot mr-1.5"></i> Salle Kondiaronk, Wendake
+                    </span>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Conférence 1 -->
+                <div class="bg-white p-6 rounded-xl border-l-4 border-wendake-red shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-xs font-bold text-wendake-red uppercase">
+                            <i class="fa-regular fa-calendar font-bold"></i> 8 Septembre 2025 / 3 Octobre 2024 • 19h00
+                        </div>
+                        <h3 class="text-xl font-bold text-wendake-navy" data-fr="La Seigneurie de Sillery et les Wendats" data-en="The Seigniory of Sillery and the Wendat">
+                            La Seigneurie de Sillery et les Wendats
+                        </h3>
+                        <p class="text-sm text-gray-600 max-w-3xl" data-fr="Conférencier : Tharehtade (Michel Gros-Louis). Analyse historique de la concession seigneuriale de 1651 près du fleuve Saint-Laurent, de l'appartenance immémoriale reconnue dans les Relations des Jésuites et des revendications des chefs wendats." data-en="Speaker: Tharehtade (Michel Gros-Louis). Historical analysis of the 1651 seigniorial grant near the St. Lawrence River, immemorial ownership noted in Jesuit Relations, and Wendat chief claims.">
+                            Conférencier : <strong>Tharehtade (Michel Gros-Louis)</strong>. Analyse historique de la concession seigneuriale de 1651 près du fleuve Saint-Laurent, de l'appartenance immémoriale reconnue dans les Relations des Jésuites et des revendications soutenues par les chefs wendats.
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <span class="px-4 py-2 bg-stone-100 text-wendake-navy text-xs font-bold rounded-lg block" data-fr="Entrée Libre / Membres" data-en="Free for Members">Entrée Libre / Membres</span>
+                    </div>
+                </div>
+
+                <!-- Conférence 2 -->
+                <div class="bg-white p-6 rounded-xl border-l-4 border-wendake-navy shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-xs font-bold text-wendake-navy uppercase">
+                            <i class="fa-regular fa-calendar"></i> Archives & Conférence Partenaire
+                        </div>
+                        <h3 class="text-xl font-bold text-wendake-navy" data-fr="Histoire de la Réduction et Seigneurie de Sillery (1637)" data-en="History of the Sillery Reduction & Seigniory (1637)">
+                            Histoire de la Réduction et Seigneurie de Sillery (1637)
+                        </h3>
+                        <p class="text-sm text-gray-600 max-w-3xl" data-fr="Présenté en collaboration avec la Société d'histoire de Sillery (Jean-Louis Vallée). Historique de la concession concédée sous Louis XIII aux néophytes autochtones et son évolution à travers le temps." data-en="Presented in collaboration with the Sillery Historical Society (Jean-Louis Vallée). History of the grant issued under Louis XIII to Indigenous converts and its evolution.">
+                            Présenté en collaboration avec Jean-Louis Vallée (Société d'histoire de Sillery). Historique de la concession concédée sous Louis XIII aux néophytes autochtones et son évolution sociopolitique.
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <span class="px-4 py-2 bg-stone-100 text-gray-700 text-xs font-bold rounded-lg block" data-fr="Archive / Référence" data-en="Archive / Reference">Archive / Référence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOUVERNANCE & CHARTE -->
+    <section id="charter" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                
+                <!-- Membres Fondateurs & CA -->
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold text-wendake-navy font-heading" data-fr="Conseil d'Administration & Fondateurs" data-en="Board of Directors & Founders">
+                        Conseil d'Administration & Fondateurs
+                    </h2>
+                    <p class="text-sm text-gray-600" data-fr="La Société a été officiellement fondée par 13 membres fondateurs passionnés lors de la réunion inaugurale du 29 juin 2023." data-en="The Society was officially established by 13 passionate founding members during the inaugural meeting on June 29, 2023.">
+                        La Société a été officiellement fondée par 13 membres fondateurs passionnés lors de la réunion inaugurale du 29 juin 2023.
+                    </p>
+
+                    <div class="bg-stone-50 p-5 rounded-lg border border-stone-200">
+                        <h3 class="font-bold text-wendake-red text-sm uppercase mb-3" data-fr="Conseil d'Administration Interimaire" data-en="Interim Board Officers">Conseil d'Administration Intérimaire</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li><i class="fa-solid fa-user-tie text-wendake-gold mr-2"></i> <strong>Président :</strong> Michel Gros-Louis (Tharehtade)</li>
+                            <li><i class="fa-solid fa-coins text-wendake-gold mr-2"></i> <strong>Trésorier :</strong> Dany Gros-Louis</li>
+                            <li><i class="fa-solid fa-pen-nib text-wendake-gold mr-2"></i> <strong>Secrétaire :</strong> Philippe Sébastien</li>
+                            <li><i class="fa-solid fa-handshake text-wendake-gold mr-2"></i> <strong>Président d'assemblée temporaire :</strong> Louis Vallée</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-sm text-wendake-navy uppercase mb-2" data-fr="Les 13 Membres Fondateurs (Cartes gratuites à vie) :" data-en="The 13 Founding Members (Free lifetime membership):">Les 13 Membres Fondateurs :</h4>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-gray-600 bg-stone-50 p-4 rounded-lg">
+                            <div>• Dany Gros-Louis</div>
+                            <div>• Annie Bolduc</div>
+                            <div>• Madeleine Bastien</div>
+                            <div>• Jean Turcotte Sioui</div>
+                            <div>• Dany (Dave) Pineault Sioui</div>
+                            <div>• Romain Pineault</div>
+                            <div>• Michel Picard (Pic)</div>
+                            <div>• Roland Gros-Louis Maillet</div>
+                            <div>• Linda Sioui</div>
+                            <div>• Louis Vallée</div>
+                            <div>• Michel Gros-Louis</div>
+                            <div>• Geneviève Mckensie Sioui</div>
+                            <div>• Philippe Sébastien</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charte & Règlements -->
+                <div class="bg-stone-50 p-6 rounded-xl border border-stone-200 space-y-4">
+                    <h2 class="text-2xl font-bold text-wendake-navy font-heading" data-fr="Statuts & Catégories de Membres" data-en="Charter & Membership Categories">
+                        Statuts & Catégories de Membres
+                    </h2>
+                    <p class="text-sm text-gray-600" data-fr="Extrait du Règlement Général de Iwontonk, la Société d'Histoire Wendat (Loi sur les compagnies du Québec, Partie III) :" data-en="Extract from the General Regulations of Iwontonk, Wendat Historical Society (Quebec Companies Act, Part III):">
+                        Extrait du Règlement Général de Iwontonk, la Société d'Histoire Wendat :
+                    </p>
+
+                    <div class="space-y-3 text-xs text-gray-700">
+                        <div class="p-3 bg-white rounded border">
+                            <strong class="text-wendake-red block font-semibold" data-fr="Membres Wendats" data-en="Wendat Members">Membres Wendats</strong>
+                            <p data-fr="Toute personne appartenant à la Nation huronne-wendate. Droit de vote aux assemblées, éligible aux postes d'administrateurs du Conseil d'Administration." data-en="Any person belonging to the Huron-Wendat Nation. Voting rights, eligible for Board positions.">Toute personne appartenant à la Nation huronne-wendate. Droit de vote aux assemblées, éligible comme administrateur.</p>
+                        </div>
+
+                        <div class="p-3 bg-white rounded border">
+                            <strong class="text-wendake-navy block font-semibold" data-fr="Membres Non-Wendats" data-en="Non-Wendat Members">Membres Non-Wendats</strong>
+                            <p data-fr="Personne manifestant un intérêt pour l'histoire des Wendats. Peut assister et voter aux assemblées des membres (2 postes sur 7 au CA accessibles selon critères)." data-en="Persons showing interest in Wendat history. May attend and vote at member assemblies.">Personne manifestant un intérêt pour l'histoire wendate. Peut assister et voter aux assemblées générales.</p>
+                        </div>
+
+                        <div class="p-3 bg-white rounded border">
+                            <strong class="text-wendake-gold block font-semibold" data-fr="Assembleurs & Transparence" data-en="Assembly & Transparency">Transparence & Gouvernance</strong>
+                            <p data-fr="Le bilan financier et la charte de la Société sont publiés annuellement. Le quorum des assemblées exige 70% de membres wendats présents." data-en="Financial statements and bylaws published annually. Assembly quorum requires 70% Wendat members present.">Transparence priorisée. Le quorum des assemblées générales requiert un minimum de 10 membres wendats (70% des personnes présentes).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORIENS, AUTEURS ET RECHERCHE -->
+    <section id="resources" class="py-16 bg-stone-100 border-t border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-wendake-navy font-heading" data-fr="Auteurs & Historiens de Référence" data-en="Reference Authors & Historians">
+                    Auteurs & Historiens de Référence
+                </h2>
+                <p class="text-gray-600 mt-2" data-fr="Base documentaire et chercheurs incontournables de l'histoire Huron-Wendat et Wyandot" data-en="Essential documentary base and researchers of Huron-Wendat and Wyandot history">
+                    Base documentaire et chercheurs incontournables de l'histoire Huron-Wendat et Wyandot
+                </p>
+                <div class="w-20 h-1 bg-wendake-gold mx-auto mt-4"></div>
+            </div>
+
+            <!-- Grille des Historiens -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
+                    <h3 class="font-bold text-wendake-navy">Georges E. Sioui</h3>
+                    <span class="text-xs text-wendake-red font-semibold block mb-2">Historien, philosophe & auteur</span>
+                    <p class="text-xs text-gray-600" data-fr="Pionnier de l'autohistoire amérindienne, auteur de 'Les Hurons-Wendat : Une civilisation méconnue'." data-en="Pioneer of Indigenous auto-history, author of 'For An Amerindian Autohistory'.">Pionnier de l'autohistoire amérindienne, auteur de « Les Hurons-Wendat : Une civilisation méconnue ».</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
+                    <h3 class="font-bold text-wendake-navy">Jonathan Lainey</h3>
+                    <span class="text-xs text-wendake-red font-semibold block mb-2">Conservateur & Historien wendat</span>
+                    <p class="text-xs text-gray-600" data-fr="Spécialiste de la culture matérielle, des wampums et de l'histoire documentaire autochtone." data-en="Specialist in material culture, wampum belts, and Indigenous documentary history.">Spécialiste de la culture matérielle, des wampums et de l'histoire documentaire autochtone.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
+                    <h3 class="font-bold text-wendake-navy">John Steckley</h3>
+                    <span class="text-xs text-wendake-red font-semibold block mb-2">Linguiste (Humber College)</span>
+                    <p class="text-xs text-gray-600" data-fr="Spécialiste de la langue wendate, décortiquant les premiers lexiques de Brébeuf et Sagard ('Words of the Huron')." data-en="Specialist in the Wendat language, analyzing early lexicons by Brébeuf and Sagard.">Spécialiste de la langue wendate, analyse les premiers lexiques de Brébeuf et Sagard (« Words of the Huron »).</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
+                    <h3 class="font-bold text-wendake-navy">Bruce Trigger</h3>
+                    <span class="text-xs text-wendake-red font-semibold block mb-2">Anthropologue & Historien</span>
+                    <p class="text-xs text-gray-600" data-fr="Auteur de la grande œuvre de référence 'The Children of Aataentsic' (Les Enfants d'Aataentsic)." data-en="Author of the monumental reference work 'The Children of Aataentsic'.">Auteur de l'œuvre monumentale de référence « The Children of Aataentsic » (Les Enfants d'Aataentsic).</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
+                    <h3 class="font-bold text-wendake-navy">Conrad E. Heidenreich</h3>
+                    <span class="text-xs text-wendake-red font-semibold block mb-2">Géographe culturel (York Univ.)</span>
+                    <p class="text-xs text-gray-600" data-fr="Auteur de 'Huronia: A History and Geography of the Huron Indians' et cartographe des routes de Champlain." data-en="Author of 'Huronia' and cartographer of Samuel de Champlain's explorations.">Auteur de « Huronia » et cartographe des explorations de Samuel de Champlain.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
+                    <h3 class="font-bold text-wendake-navy">Peter D. Clarke & Charles Garrad</h3>
+                    <span class="text-xs text-wendake-red font-semibold block mb-2">Historiens & Archéologues</span>
+                    <p class="text-xs text-gray-600" data-fr="Écrits fondateurs du XIXe siècle (Clarke) et travaux de référence sur les Petuns et Wyandots (Garrad)." data-en="19th century founding writings (Clarke) and research on Petuns/Wyandots (Garrad).">Écrits fondateurs du XIXe siècle (Clarke) et travaux sur les Petuns et Wyandots (Garrad).</p>
+                </div>
+            </div>
+
+            <!-- Liens de référence bibliographique -->
+            <div class="bg-white p-6 rounded-xl border border-stone-200">
+                <h3 class="font-bold text-lg text-wendake-navy mb-4" data-fr="Liens & Publications Web Recommandées" data-en="Web Links & Recommended Publications">
+                    <i class="fa-solid fa-link text-wendake-gold mr-2"></i> Liens & Publications Web Recommandées
+                </h3>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <a href="https://www.wendake.ca/histoire-et-culture" target="_blank" class="text-wendake-red hover:underline flex items-center gap-1"><i class="fa-solid fa-arrow-up-right-from-square"></i> Conseil de la Nation Huron-Wendat - Histoire & Culture</a>
+                    <a href="http://www.territoireautochtone.uqam.ca/beaulieu_publications/accueil_files/beaulieu_les_hurons_et_la_conquete.pdf" target="_blank" class="text-wendake-red hover:underline flex items-center gap-1"><i class="fa-solid fa-file-pdf"></i> Alain Beaulieu - Les Hurons et la Conquête</a>
+                    <a href="https://www.banq.qc.ca/explorer/articles/voyage-dans-la-memoire-des-hurons-wendats/" target="_blank" class="text-wendake-red hover:underline flex items-center gap-1"><i class="fa-solid fa-arrow-up-right-from-square"></i> BAnQ - Voyage dans la mémoire des Hurons-Wendats</a>
+                    <a href="http://www.lecarnetduflaneur.com/2012/10/des-hurons-trois-rivieres.html" target="_blank" class="text-wendake-red hover:underline flex items-center gap-1"><i class="fa-solid fa-newspaper"></i> Le Carnet du Flâneur - Les Hurons à Trois-Rivières</a>
+                    <a href="http://www.lecarnetduflaneur.com/2012/10/les-megissiers.html" target="_blank" class="text-wendake-red hover:underline flex items-center gap-1"><i class="fa-solid fa-newspaper"></i> Le Carnet du Flâneur - Les Mégissiers de Wendake</a>
+                    <a href="https://shfq.ca/wp-content/uploads/2021/07/JFR-huron-wendat-nionwentsio.pdf" target="_blank" class="text-wendake-red hover:underline flex items-center gap-1"><i class="fa-solid fa-file-pdf"></i> Le Territoire Nionwentsïo - SHFQ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHIVES & RESEAUX SOCIAUX -->
+    <section id="archives" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Centre d'archives -->
+                <div class="p-6 bg-stone-50 rounded-xl border border-stone-200">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="p-3 bg-wendake-navy text-white rounded-lg"><i class="fa-solid fa-box-archive text-xl"></i></div>
+                        <div>
+                            <h3 class="font-bold text-lg text-wendake-navy" data-fr="Centre d'Archives du Conseil Wendat" data-en="Wendat Council Archives Center">Centre d'Archives du Conseil Wendat</h3>
+                            <span class="text-xs text-gray-500">Wendake, QC</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-4" data-fr="Conservation des documents officiels, cartographie historique, correspondances et registres de la Nation Huronne-Wendat." data-en="Preservation of official documents, historical mapping, correspondence, and registers of the Huron-Wendat Nation.">
+                        Lieu privilégié pour la recherche, la conservation des documents historiques, la généalogie et les registres patrimoniaux de la Nation.
+                    </p>
+                    <a href="https://www.wendake.ca/etablissements/centre-darchives" target="_blank" class="inline-block text-xs font-bold text-wendake-red hover:underline" data-fr="Consulter le Centre d'Archives →" data-en="Visit the Archives Center →">
+                        Consulter le Centre d'Archives →
+                    </a>
+                </div>
+
+                <!-- Groupes Facebook & Communauté -->
+                <div class="p-6 bg-stone-50 rounded-xl border border-stone-200">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="p-3 bg-blue-700 text-white rounded-lg"><i class="fa-brands fa-facebook text-xl"></i></div>
+                        <div>
+                            <h3 class="font-bold text-lg text-wendake-navy" data-fr="Communauté & Généalogie" data-en="Community & Genealogy">Communauté & Généalogie</h3>
+                            <span class="text-xs text-gray-500">Groupes de discussion officiels</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-4" data-fr="Rejoignez nos communautés virtuelles pour échanger des photos anciennes, des questions généalogiques et des avis de conférences." data-en="Join our online communities to share old photos, genealogical research, and lecture notices.">
+                        Rejoignez nos communautés virtuelles pour échanger des photos anciennes, documents de famille et avis de réunions.
+                    </p>
+                    <div class="space-y-2 text-xs">
+                        <a href="https://www.facebook.com/groups/903279382516803/" target="_blank" class="block font-semibold text-blue-700 hover:underline">
+                            <i class="fa-solid fa-users mr-1"></i> Groupe officiel de la Société d'histoire wendat
+                        </a>
+                        <a href="https://www.facebook.com/groups/5731220710242630" target="_blank" class="block font-semibold text-blue-700 hover:underline">
+                            <i class="fa-solid fa-tree-city mr-1"></i> Groupe Histoire et Généalogie Wendat
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto bg-wendake-navy text-stone-300 py-12 border-t-4 border-wendake-gold">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8 text-xs">
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3 font-heading">SOCIÉTÉ D'HISTOIRE DE WENDAKE</h4>
+                    <p class="text-stone-400 mb-2">iwontonk • societe-historique-wendake.org</p>
+                    <p class="text-stone-400">Village Huron-Wendake, QC, Canada</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3 font-heading" data-fr="PARTENAIRES HISTORIQUES" data-en="HISTORICAL PARTNERS">PARTENAIRES HISTORIQUES</h4>
+                    <ul class="space-y-1 text-stone-400">
+                        <li>• Société d'histoire de Sillery</li>
+                        <li>• Société d'histoire de la Haute-Saint-Charles</li>
+                        <li>• Société d'histoire de L'Ancienne-Lorette</li>
+                        <li>• Société d'art et d'histoire de Beauport</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3 font-heading" data-fr="CONTACT & SECRETARIAT" data-en="CONTACT & SECRETARIAT">CONTACT & SECRETARIAT</h4>
+                    <p class="text-stone-400 mb-1"><i class="fa-regular fa-envelope mr-1"></i> Tharehtade@yahoo.com</p>
+                    <p class="text-stone-400"><i class="fa-solid fa-calendar-check mr-1"></i> Réunions : Dernier jeudi du mois</p>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-stone-700 text-center text-xs text-stone-500">
+                <div class="contrib">Powered by <a href="https://philippesebastien.github.io/tecetcetera.ca" target="_blank" rel="noopener">tecetcetera.ca</a></div>
+                <p>&copy; 2026 Société d'Histoire de Wendake / Wendake Historical Society. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT MULTILINGUE (FR / EN) -->
+    <script>
+        let currentLang = 'FR';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'FR' ? 'EN' : 'FR';
+            document.getElementById('lang-label').innerText = currentLang === 'FR' ? 'EN' : 'FR';
+            
+            const elements = document.querySelectorAll('[data-fr]');
+            elements.forEach(el => {
+                if (currentLang === 'EN') {
+                    if (el.hasAttribute('data-en')) {
+                        el.innerText = el.getAttribute('data-en');
+                    }
+                } else {
+                    el.innerText = el.getAttribute('data-fr');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
